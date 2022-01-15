@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80E5E4E2"
+    tools:context=".MainActivity">
+
+
+    <FrameLayout
+        android:id="@+id/icon"
+        android:layout_width="380dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/frame_format"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="left"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/logo"
+            android:contentDescription="Logo"
+            />
+
+
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:text="Dr. Md Asad"
+            android:textColor="#535353"
+            android:textSize="25sp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="50dp"
+            android:textAllCaps="false"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:text="Contact:"
+            android:textColor="#535353"
+            android:textSize="18sp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="85dp"
+            android:textAllCaps="false"/>
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:text="01834859363"
+            android:textColor="#535353"
+            android:textSize="18sp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="85dp"
+            android:textAllCaps="false"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:text="Mail      : "
+            android:textColor="#535353"
+            android:textSize="18sp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="115dp"
+            android:textAllCaps="false"/>
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:text="xyz@hotmail.com"
+            android:textColor="#535353"
+            android:textSize="18sp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="115dp"
+            android:textAllCaps="false"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/loginlayout"
+        android:layout_width="380dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        android:background="@drawable/frame_format"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="left"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/logo"
+            android:contentDescription="Logo"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:text="Please Login First"
+            android:textColor="#535353"
+            android:textSize="25sp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="20dp"
+            android:textAllCaps="false"/>
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/login"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="Login"
+            android:textColor="#FFFFFF"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="80dp"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:textAllCaps="false"
+            android:background="@drawable/cc_button"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="380dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon"
+        android:orientation="vertical" >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/profile"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="    Profile"
+            android:textColor="#535353"
+            android:textAlignment="viewStart"
+            android:textSize="25sp"
+            android:paddingStart="20dip"
+            android:drawablePadding="10dp"
+            android:textAllCaps="false"
+            android:background="@color/white"
+            android:drawableStart="@drawable/profile" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/changecur"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="    Change Currency"
+            android:textColor="#535353"
+            android:textAlignment="viewStart"
+            android:textSize="25sp"
+            android:paddingStart="20dip"
+            android:drawablePadding="10dp"
+            android:background="@color/white"
+            android:textAllCaps="false"
+            android:drawableStart="@drawable/currency" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/settings"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="    Application Settings"
+            android:textColor="#535353"
+            android:textAlignment="viewStart"
+            android:textSize="25sp"
+            android:paddingStart="20dip"
+            android:background="@color/white"
+            android:drawablePadding="10dp"
+            android:textAllCaps="false"
+            android:drawableLeft="@drawable/settings" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/about"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="    About Developper"
+            android:textColor="#535353"
+            android:textAlignment="viewStart"
+            android:textSize="25sp"
+            android:paddingStart="20dip"
+            android:background="@color/white"
+            android:drawablePadding="10dp"
+            android:textAllCaps="false"
+            android:drawableStart="@drawable/about" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="    Logout"
+            android:textColor="#535353"
+            android:textAlignment="viewStart"
+            android:textSize="25sp"
+            android:visibility="invisible"
+            android:paddingStart="20dip"
+            android:background="@color/white"
+            android:drawablePadding="10dp"
+            android:textAllCaps="false"
+            android:drawableStart="@drawable/logout" />
+    </LinearLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/bgBottomNavigation"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/navigation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
