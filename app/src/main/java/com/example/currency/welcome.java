@@ -19,7 +19,7 @@ public class welcome extends Activity {
         SharedPreferences.Editor editor = pref.edit();
         editor.putBoolean("musics", true);
         editor.apply();
-        startService(new Intent(welcome.this, bgmusic.class));
+        //startService(new Intent(welcome.this, bgmusic.class));
         handler=new Handler();
         handler.postDelayed(new Runnable() {
             @Override

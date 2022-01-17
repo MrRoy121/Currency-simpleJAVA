@@ -22,13 +22,17 @@
             android:background="#92E1D1">
 
             <ImageView
+                android:id="@+id/img"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:layout_margin="9dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="9dp"
                 android:adjustViewBounds="true"
                 android:padding="3dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/user"/>
+                android:src="@drawable/user" />
 
         </RelativeLayout>
 
@@ -150,4 +154,34 @@
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/browse"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="120dp"
+        android:backgroundTint="#515151"
+        android:background="@drawable/cc_button"
+        android:text="Browse Image"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/upload"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/cc_button"
+        android:text="Upload Image"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
 </RelativeLayout>
