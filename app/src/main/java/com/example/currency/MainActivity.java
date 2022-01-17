@@ -1,6 +1,8 @@
 package com.example.currency;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -22,9 +24,19 @@ import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.DataPointInterface;
@@ -33,6 +45,9 @@ import com.jjoe64.graphview.series.OnDataPointTapListener;
 import com.jjoe64.graphview.series.PointsGraphSeries;
 import com.jjoe64.graphview.series.Series;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -40,16 +55,30 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Button closePopupBtn;
     PopupWindow popupWindow;
 
+
+    FirebaseStorage fStorage;
+    FirebaseFirestore fstore;
+    StorageReference srefer;
+
     String[] cur1 = { "Taka"};
     String[] cur = {"Euro", "Dollar", "Rupee", "Yen", "Pound"};
     GraphView graphView;
 
+    private RecyclerView courseVR;
+
+    private ArrayList<countrylist> coursesrrayList;
+    private countrylist_adapter courseRVdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        fstore = FirebaseFirestore.getInstance();
+        fStorage = FirebaseStorage.getInstance();
+        srefer = fStorage.getReference();
+
+        loadcountry();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -186,6 +215,35 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     }
                 }
             });
+
+
+
+
+            courseVR =findViewById(R.id.rview);
+        coursesrrayList = new ArrayList<>();
+        courseVR.setHasFixedSize(true);
+        courseVR.setLayoutManager(new LinearLayoutManager(this));
+        courseRVdapter = new countrylist_adapter(coursesrrayList, this);
+        courseVR.setAdapter(courseRVdapter);
+
+
+    }
+
+    private void loadcountry() {
+        fstore.collection("country").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                if (!queryDocumentSnapshots.isEmpty()) {
+                    List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                    for (DocumentSnapshot d : list) {
+                        countrylist c = d.toObject(countrylist.class);
+                        coursesrrayList.add(c);
+                    }
+                    courseRVdapter.notifyDataSetChanged();
+                }
+            }
+        });
+
     }
 
     @Override

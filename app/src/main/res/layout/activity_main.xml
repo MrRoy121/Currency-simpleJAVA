@@ -116,8 +116,8 @@
                 <EditText
                     android:id="@+id/cone"
                     android:layout_width="150dp"
-                    android:layout_height="34dp"
-                    android:hint="Amout"
+                    android:layout_height="wrap_content"
+                    android:hint="Amount"
                     android:inputType="number"
                     android:textColor="#636363" />
 
@@ -198,8 +198,9 @@
         <LinearLayout
             android:id="@+id/currency"
             android:layout_width="380dp"
-            android:layout_height="500dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:orientation="vertical"
             android:background="@drawable/frame_format"
             app:layout_constraintEnd_toEndOf="parent"
@@ -207,402 +208,10 @@
             app:layout_constraintTop_toBottomOf="@+id/convert">
 
 
-            <LinearLayout
-                android:gravity="center"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rview"
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:padding="5dp"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:padding="5dp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/bangladesh"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#636363"
-                    android:text="Bangladesh"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_gravity="center"
-                    android:textSize="22sp"/>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="BDT"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="14sp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Market Cap"
-                        android:textStyle="bold"
-                        android:layout_marginEnd="5dp"
-                        android:layout_gravity="right"
-                        android:textColor="@color/colorAccent"
-                        android:layout_marginTop="5dp"
-                        android:textSize="8sp"/>
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="19 sats"
-                        android:layout_marginEnd="5dp"
-                        android:textStyle="bold"
-                        android:textColor="#636363"
-                        android:layout_gravity="right"
-                        android:textSize="22sp"/>
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:padding="5dp"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:padding="5dp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/india"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#636363"
-                    android:text="India"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_gravity="center"
-                    android:textSize="22sp"/>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="INR"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="14sp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Market Cap"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorAccent"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_gravity="right"
-                        android:textSize="8sp"/>
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="22 sats"
-                        android:layout_marginEnd="5dp"
-                        android:textStyle="bold"
-                        android:layout_marginStart="70dp"
-                        android:textColor="#636363"
-                        android:layout_gravity="right"
-                        android:textSize="22sp"/>
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:padding="5dp"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:padding="5dp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/japan"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#636363"
-                    android:text="Japan"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_gravity="center"
-                    android:textSize="22sp"/>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="JPY"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="14sp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Market Cap"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorAccent"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_gravity="right"
-                        android:textSize="8sp"/>
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="14 sats"
-                        android:textStyle="bold"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginStart="60dp"
-                        android:textColor="#636363"
-                        android:layout_gravity="right"
-                        android:textSize="22sp"/>
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:padding="5dp"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:padding="5dp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/europeanunion"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#636363"
-                    android:text="European Union"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_gravity="center"
-                    android:textSize="20sp"/>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="EURO"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="14sp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Market Cap"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorAccent"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_gravity="right"
-                        android:textSize="8sp"/>
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1,897 sats"
-                        android:layout_marginEnd="5dp"
-                        android:textStyle="bold"
-                        android:textColor="#636363"
-                        android:layout_gravity="right"
-                        android:textSize="22sp"/>
-
-                </LinearLayout>
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:padding="5dp"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:padding="5dp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/unitedkingdom"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#636363"
-                    android:text="United Kingdom"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_gravity="center"
-                    android:textSize="20sp"/>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="GBP"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="14sp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Market Cap"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorAccent"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_gravity="right"
-                        android:textSize="8sp"/>
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="2,252 sats"
-                        android:textStyle="bold"
-                        android:layout_marginEnd="5dp"
-                        android:textColor="#636363"
-                        android:layout_gravity="right"
-                        android:textSize="22sp"/>
-
-                </LinearLayout>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:padding="5dp"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="70dp"
-                    android:padding="5dp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/unitedstates"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#636363"
-                    android:text="United States"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_gravity="center"
-                    android:textSize="20sp"/>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="USD"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="14sp"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Market Cap"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorAccent"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_gravity="right"
-                        android:textSize="8sp"/>
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1,692 sats"
-                        android:textStyle="bold"
-                        android:textColor="#636363"
-                        android:layout_marginEnd="5dp"
-                        android:layout_gravity="right"
-                        android:textSize="22sp"/>
-
-                </LinearLayout>
-            </LinearLayout>
-
+                android:layout_height="500dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -610,7 +219,8 @@
                 android:text="Data From: fiatmarketcap"
                 android:textColor="@color/colorAccent"
                 android:layout_marginStart="100dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
                 android:layout_gravity="center"
                 android:textSize="12sp"/>
 
@@ -627,7 +237,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_gravity="bottom"
         android:background="@color/bgBottomNavigation"
         app:itemIconTint="@android:color/white"
@@ -636,7 +246,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/navigation" >
-
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

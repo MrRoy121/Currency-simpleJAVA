@@ -119,12 +119,7 @@ public class register extends AppCompatActivity {
                                 user.put("Phone", phone);
                                 user.put("Currency", currency);
                                 user.put("Password", pass);
-                                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void unused) {
-
-                                    }
-                                });
+                                documentReference.set(user);
 
                                 Intent i = new Intent(register.this,login.class);
                                 startActivity(i);
